@@ -1,25 +1,14 @@
-# ![RealWorld Example App](project-logo.png)
 
-![CI](https://github.com/neo4j-examples/golang-neo4j-realworld-example/workflows/Go/badge.svg)
 
-> ### Neo4j & Golang (using the Neo4j driver) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld) spec and API.
-
-## Prerequisites
-
-Make sure to install a recent [Golang](https://golang.org/) version.
-
-## Build
-
-As simple as:
-
-```
-go build ./cmd/conduit
-```
+初始简易框架来自neo4j的官方例子：https://github.com/neo4j-examples/golang-neo4j-realworld-example
 
 ## Run
 
-First, make sure to configure the application to target your specific Neo4j instance.
-All settings are mandatory.
+```
+go run ./cmd/conduit/
+```
+
+在跑之前需要在.zshrc设置环境变量。to target your specific Neo4j instance.All settings are mandatory.
 
 | Environment variable  | Description |
 | --------------------- | ----------- |
@@ -27,15 +16,4 @@ All settings are mandatory.
 | NEO4J_USERNAME        | Username of the account to connect with (must have read & write permissions) |
 | NEO4J_PASSWORD        | Password of the account to connect with (must have read & write permissions)|
 
-Then, just execute:
-```
-./conduit
-```
-
-You can also skip the build command and directly execute:
-
-```
-go run ./cmd/conduit/
-```
-
-And exercise the application with [Postman](https://www.postman.com/) (see [the collection file](./Conduit.postman_collection.json)) at `localhost:3000`.
+然后开放的接口位于本地3000端口。
