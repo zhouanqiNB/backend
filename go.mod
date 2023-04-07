@@ -1,4 +1,4 @@
-module github.com/neo4j-examples/golang-neo4j-realworld-example
+module github.com/zhouanqiNB/backend
 
 go 1.15
 

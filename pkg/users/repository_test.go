@@ -3,14 +3,15 @@ package users_test
 import (
 	"context"
 	"fmt"
-	"github.com/neo4j-examples/golang-neo4j-realworld-example/pkg/users"
+	"io"
+
 	"github.com/neo4j/neo4j-go-driver/v4/neo4j"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/wait"
+	"github.com/zhouanqiNB/backend/pkg/users"
 	"golang.org/x/crypto/bcrypt"
-	"io"
 )
 
 var _ = Describe("User repository", func() {

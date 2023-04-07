@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/neo4j-examples/golang-neo4j-realworld-example/pkg/users"
-	"github.com/neo4j/neo4j-go-driver/v4/neo4j"
 	"net/http"
 	"os"
+
+	"github.com/neo4j/neo4j-go-driver/v4/neo4j"
+	"github.com/zhouanqiNB/backend/pkg/users"
 )
 
 func main() {
@@ -20,6 +21,7 @@ func main() {
 	if !found {
 		panic("NEO4J_PASSWORD not set")
 	}
+
 	usersRepository := users.UserNeo4jRepository{
 		Driver: driver(neo4jUri, neo4j.BasicAuth(neo4jUsername, neo4jPassword, "")),
 	}

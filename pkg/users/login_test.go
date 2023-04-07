@@ -3,11 +3,12 @@ package users_test
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/neo4j-examples/golang-neo4j-realworld-example/pkg/users"
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
 	"net/http/httptest"
 	"strings"
+
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+	"github.com/zhouanqiNB/backend/pkg/users"
 )
 
 var _ = Describe("Users", func() {
