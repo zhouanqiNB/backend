@@ -45,11 +45,17 @@ func main() {
 	stackOverflowRepository := stackoverflow.StackOverflowNeo4jRepository{
 		Driver: driver(neo4jUri, neo4j.BasicAuth(neo4jUsername, neo4jPassword, "")),
 	}
+	// 画面的最初展现出全景
+	queryAllHandler := &stackoverflow.QueryAllHandler{
+		Path:                    "/query_all",
+		StackOverflowRepository: &stackOverflowRepository,
+	}
 	queryHandler := &stackoverflow.QueryHandler{
 		Path:                    "/query",
 		StackOverflowRepository: &stackOverflowRepository,
 	}
 
+	server.HandleFunc(queryAllHandler.Path, queryAllHandler.QueryAll)
 	server.HandleFunc(queryHandler.Path, queryHandler.Query)
 
 	if err := http.ListenAndServe(":3000", server); err != nil {
