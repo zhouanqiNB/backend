@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/neo4j/neo4j-go-driver/v4/neo4j"
+	"github.com/zhouanqiNB/backend/pkg/stackoverflow"
 	"github.com/zhouanqiNB/backend/pkg/users"
 )
 
@@ -37,6 +38,19 @@ func main() {
 	server := http.NewServeMux()
 	server.HandleFunc(registrationHandler.Path, registrationHandler.Register)
 	server.HandleFunc(loginHandler.Path, loginHandler.Login)
+
+	// ======
+
+	// use driver to build a connection with db.
+	stackOverflowRepository := stackoverflow.StackOverflowNeo4jRepository{
+		Driver: driver(neo4jUri, neo4j.BasicAuth(neo4jUsername, neo4jPassword, "")),
+	}
+	queryHandler := &stackoverflow.QueryHandler{
+		Path:                    "/query",
+		StackOverflowRepository: &stackOverflowRepository,
+	}
+
+	server.HandleFunc(queryHandler.Path, queryHandler.Query)
 
 	if err := http.ListenAndServe(":3000", server); err != nil {
 		panic(err)
