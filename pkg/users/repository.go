@@ -14,6 +14,7 @@ type UserNeo4jRepository struct {
 	Driver neo4j.Driver
 }
 
+// 对 UserNeo4jRepository 实现了接口 UserRepository
 func (u *UserNeo4jRepository) RegisterUser(user *User) (err error) {
 	session := u.Driver.NewSession(neo4j.SessionConfig{
 		AccessMode: neo4j.AccessModeWrite,
