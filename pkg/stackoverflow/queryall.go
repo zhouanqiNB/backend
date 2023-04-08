@@ -13,7 +13,7 @@ type QueryAllHandler struct {
 func (u *QueryAllHandler) QueryAll(writer http.ResponseWriter, request *http.Request) {
 	result, _ := u.StackOverflowRepository.DoQueryAll()
 
-	if result == nil {
+	if len(result.Nodes) == 0 {
 		writer.WriteHeader(401)
 		return
 	}
