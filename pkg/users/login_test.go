@@ -13,10 +13,10 @@ import (
 
 var _ = Describe("Users", func() {
 	userLoginRequest := users.UserLogin{
-		User: users.User{
-			Email:    "florent@example.org",
-			Password: "very-secure",
-		},
+		// User: users.User{
+		// 	Email:    "florent@example.org",
+		// 	Password: "very-secure",
+		// },
 	}
 
 	It("should log in", func() {

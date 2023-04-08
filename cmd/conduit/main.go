@@ -26,6 +26,11 @@ func main() {
 	usersRepository := users.UserNeo4jRepository{
 		Driver: driver(neo4jUri, neo4j.BasicAuth(neo4jUsername, neo4jPassword, "")),
 	}
+	// println(neo4jUri)
+	// println(neo4jUsername)
+	// println(neo4jPassword)
+
+	// this one is working but somehow I just can't transfer my args(by post,json)
 	registrationHandler := &users.UserRegistrationHandler{
 		Path:           "/users",
 		UserRepository: &usersRepository,

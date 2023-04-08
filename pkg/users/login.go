@@ -2,21 +2,24 @@ package users
 
 import (
 	"encoding/json"
-	"github.com/dgrijalva/jwt-go"
 	"io/ioutil"
 	"net/http"
 	"os"
 	"time"
+
+	"github.com/dgrijalva/jwt-go"
 )
 
 type UserLogin struct {
-	User User `json:"user"`
+	Username string `json:"username"`
+	Email    string `json:"email"`
+	Password string `json:"password,omitempty"`
 }
 
 type LoggedInUser struct {
 	Username string `json:"username"`
-	Email string `json:"email"`
-	Token string `json:"token"`
+	Email    string `json:"email"`
+	Token    string `json:"token"`
 }
 
 type UserLoginHandler struct {
@@ -26,9 +29,16 @@ type UserLoginHandler struct {
 
 func (u *UserLoginHandler) Login(writer http.ResponseWriter, request *http.Request) {
 	requestBody, _ := ioutil.ReadAll(request.Body)
-	userLoginRequest := UserLogin{}
+	userLoginRequest := User{}
 	_ = json.Unmarshal(requestBody, &userLoginRequest)
-	requestUser := userLoginRequest.User
+
+	requestUser := userLoginRequest
+	println("requestUser.Username")
+	println(requestUser.Username)
+	println("requestUser.Email")
+	println(requestUser.Email)
+	println("requestUser.Password")
+	println(requestUser.Password)
 	user, _ := u.UserRepository.FindByEmailAndPassword(
 		requestUser.Email,
 		requestUser.Password)

@@ -68,18 +68,23 @@ func (u *UserNeo4jRepository) findUser(tx neo4j.Transaction, email string, passw
 			"email": email,
 		},
 	)
+
 	if err != nil {
+		println("err1")
 		return nil, err
 	}
 	record, err := result.Single()
 	if err != nil {
+		println("err2")
 		return nil, err
 	}
+	print("Hello")
 	hashedPassword, _ := record.Get("password")
 	if !passwordsMatch(hashedPassword.(string), password) {
 		return nil, nil
 	}
 	username, _ := record.Get("username")
+	print(username.(string))
 	return &User{
 		Username: username.(string),
 		Email:    email,
