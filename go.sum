@@ -556,6 +556,10 @@ github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANyt
 github.com/intel/goresctrl v0.2.0/go.mod h1:+CZdzouYFn5EsxgqAQTEzMfwKwuc0fVdMrT9FCCAVRQ=
 github.com/j-keck/arping v0.0.0-20160618110441-2cf9dc699c56/go.mod h1:ymszkNOg6tORTn+6F6j+Jc8TOr5osrynvN6ivFWZ2GA=
 github.com/j-keck/arping v1.0.2/go.mod h1:aJbELhR92bSk7tp79AWM/ftfc90EfEi2bQJrbBFOsPw=
+github.com/jmcvetta/neoism v1.3.1 h1:GCFSl/90OYwEQH5LML/Vy6UlwK4SZ2OIO278UI4K7DE=
+github.com/jmcvetta/neoism v1.3.1/go.mod h1:oo187spiW9p7dZGW+sMS+rOICd2fqFT9Oc/LdrFz7Kg=
+github.com/jmcvetta/randutil v0.0.0-20150817122601-2bb1b664bcff h1:6NvhExg4omUC9NfA+l4Oq3ibNNeJUdiAF3iBVB0PlDk=
+github.com/jmcvetta/randutil v0.0.0-20150817122601-2bb1b664bcff/go.mod h1:ddfPX8Z28YMjiqoaJhNBzWHapTHXejnB5cDCUWDwriw=
 github.com/jmespath/go-jmespath v0.0.0-20160202185014-0b12d6b521d8/go.mod h1:Nht3zPeWKUH0NzdCt2Blrr5ys8VGpn0CEB0cQHVjt7k=
 github.com/jmespath/go-jmespath v0.0.0-20160803190731-bd40a432e4c7/go.mod h1:Nht3zPeWKUH0NzdCt2Blrr5ys8VGpn0CEB0cQHVjt7k=
 github.com/joefitzgerald/rainbow-reporter v0.1.0/go.mod h1:481CNgqmVHQZzdIbN52CupLJyoVwB10FQ/IQlF1pdL8=
@@ -1432,6 +1436,8 @@ gopkg.in/fsnotify.v1 v1.4.7/go.mod h1:Tz8NjZHkW78fSQdbUxIjBTcgA1z1m8ZHf0WmKUhAMy
 gopkg.in/gemnasium/logrus-airbrake-hook.v2 v2.1.2/go.mod h1:Xk6kEKp8OKb+X14hQBKWaSkCsqBpgog8nAV2xsGOxlo=
 gopkg.in/inf.v0 v0.9.1/go.mod h1:cWUDdTG/fYaXco+Dcufb5Vnc6Gp2YChqWtbxRZE0mXw=
 gopkg.in/ini.v1 v1.51.0/go.mod h1:pNLf8WUiyNEtQjuu5G5vTm06TEv9tsIgeAvK8hOrP4k=
+gopkg.in/jmcvetta/napping.v3 v3.2.0 h1:NpSZLAL6VgiyhdqaOkxwVtHXOLrQJZ6fFOMQgp7G8PQ=
+gopkg.in/jmcvetta/napping.v3 v3.2.0/go.mod h1:0dPR4/IGM4+xGT+e48O2yJlg6qofrONCtEAWkurVlZQ=
 gopkg.in/natefinch/lumberjack.v2 v2.0.0/go.mod h1:l0ndWWf7gzL7RNwBG7wST/UCcT4T24xpD6X8LsfU/+k=
 gopkg.in/resty.v1 v1.12.0/go.mod h1:mDo4pnntr5jdWRML875a/NmxYqAlA73dVijT2AXvQQo=
 gopkg.in/square/go-jose.v2 v2.2.2/go.mod h1:M9dMgbHiYLoDGQrXy7OpJDJWiKiU//h+vD76mk0e1AI=

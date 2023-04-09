@@ -58,16 +58,14 @@ func (s *StackOverflowNeo4jRepository) queryAll(tx neo4j.Transaction) (QueryAllR
 		return QueryAllResp{}, err
 	}
 
-	nodeRecord, err := resultNodes.Collect()
-	a := nodeRecord[2]
-	if err != nil {
-		println("err")
-		return QueryAllResp{}, err
-	}
+	record := resultNodes.Record()
+	println(record.Keys[len(record.Keys)-1])
+	// if value, ok := record.Get("id"); ok {
+	// 	node := value.(neo4j.Node)
+	// 	println(node.Labels)
+	// }
 
 	println("hello")
-	res, _ := a.Get("id")
-	println(res.(string))
 
 	// queryRelationshipsStatement := "Match (n1)-[r]->(n2) return r LIMIT 10"
 	// resultRelationships, err := tx.Run(

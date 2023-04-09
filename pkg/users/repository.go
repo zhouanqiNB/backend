@@ -76,6 +76,7 @@ func (u *UserNeo4jRepository) findUser(tx neo4j.Transaction, email string, passw
 	record, err := result.Single()
 	if err != nil {
 		println("err2")
+		print(err.Error())
 		return nil, err
 	}
 	print("Hello")
